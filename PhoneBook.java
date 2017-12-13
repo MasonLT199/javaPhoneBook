@@ -9,35 +9,37 @@
 import java.util.Scanner;
 
 public class PhoneBook {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+
+        
 
         //standard input object
         Scanner sc = new Scanner(System.in);
 
         //ask for each value and scan
-        System.out.println("Please enter your information for the Java Phone Book");
+        System.out.println("\nPlease enter your information for the Java Phone Book");
         //first name
-        System.out.println("First Name: ");
+        System.out.print(" First Name: ");
         String firstName = sc.nextLine();
 
         //middle initial
-        System.out.println("Middle Initial: ");
-        char middleInitial = sc.next().charAt(0);
+        System.out.print(" Middle Initial: ");
+        String middleInitial = sc.nextLine();
 
         //last name
-        System.out.println("Last Name: ");
+        System.out.print(" Last Name: ");
         String lastName = sc.nextLine();
 
         //age
-        System.out.println("Age: ");
+        System.out.print(" Age: ");
         int age = sc.nextInt();
 
         //phone number
-        System.out.println("Phone Number: ");
+        System.out.print(" Phone Number: ");
         long phoneNumber = sc.nextLong();
 
         //send the values read to the NewEntry class and create an object
-        NewEntry person = new NewEntry(firstName, middleInital, lastName, age, phoneNumber);
+        NewEntry person = new NewEntry(firstName, middleInitial, lastName, age, phoneNumber);
 
     }
 }

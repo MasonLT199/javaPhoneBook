@@ -3,12 +3,12 @@
 public class NewEntry{
 
 	private String firstName;
-	private char middleInitial;
+	private String middleInitial;
 	private String lastName;
 	private int age;
 	private long phoneNum;
 
-	public NewEntry(String fName, char mName, String lName, int nAge, long pNum){
+	public NewEntry(String fName, String mName, String lName, int nAge, long pNum){
 		firstName = fName;
 		middleInitial = mName;
 		lastName = lName;
@@ -27,5 +27,5 @@ public class NewEntry{
 		System.out.println("Phone Number: " + phoneNum + "\n");
 	}
 
-	
+
 }
