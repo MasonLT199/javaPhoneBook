@@ -16,6 +16,7 @@ public class NewEntry{
 		phoneNum = pNum;
 
 		printAdditions();
+		saveEntry();
 	}
 
 	private void printAdditions(){
@@ -25,6 +26,16 @@ public class NewEntry{
 		System.out.println("Last Name: " +  lastName);
 		System.out.println("Age: " +  age);
 		System.out.println("Phone Number: " + phoneNum + "\n");
+	}
+
+	private void saveEntry(){
+
+		String EntryInfo = "
+
+		";
+
+
+
 	}
 
 
