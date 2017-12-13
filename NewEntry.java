@@ -1,5 +1,9 @@
 //new Entry Class
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class NewEntry{
 
 	private String firstName;
@@ -30,11 +34,17 @@ public class NewEntry{
 
 	private void saveEntry(){
 
-		String EntryInfo = "
+		String EntryInfo = "Save ME!!!!!!!!";
 
-		";
+		try {
+			BufferedWriter writer = new BufferedWriter ( new FileWriter(".\\test.txt"));
 
+			writer.write(EntryInfo);
 
+			writer.close();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
 
 	}
 
