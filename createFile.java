@@ -2,10 +2,11 @@
 import java.io.*;
 import java.lang.*;
 import java.util.*;
+//import java.lang.Object;
 
 public class createFile {
 
-	private Formatter x;
+	//private Formatter x;
 	private String firstName;
 	private String middleInitial;
 	private String lastName;
@@ -18,22 +19,35 @@ public class createFile {
 		lastName = lName;
 		age = nAge;
 		phoneNum = pNum;
+		writeUsingFileWriter();
 	}
 
-	public void openFile(){
-		try{
-			x = new Formatter("text.txt");
-		}catch(Exception e){
-			System.out.println("you have an error");
-		}
-	}
+	private static void writeUsingFileWriter() {
 
-	public void addRecords(){
-		x.format("%s %s %s %d %d", firstName, middleInitial,lastName , age, phoneNum);
-	}
+        File file = new File("./data.txt");
 
-	public void closeFile(){
-		x.close();
-	}
+        FileWriter fr = null;
 
-}
+        try {
+
+            fr = new FileWriter(file);
+            fr.write("%s %s %s %d %d",firstName,middleInitial,lastName,age,phoneNum);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }finally{
+
+            //close resources
+            try {
+
+                fr.close();
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+        }
+    }
