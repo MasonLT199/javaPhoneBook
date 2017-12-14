@@ -1,9 +1,5 @@
 //new Entry Class
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 public class NewEntry{
 
 	private String firstName;
@@ -18,9 +14,6 @@ public class NewEntry{
 		lastName = lName;
 		age = nAge;
 		phoneNum = pNum;
-
-		printAdditions();
-		saveEntry();
 	}
 
 	private void printAdditions(){
@@ -31,22 +24,5 @@ public class NewEntry{
 		System.out.println("Age: " +  age);
 		System.out.println("Phone Number: " + phoneNum + "\n");
 	}
-
-	private void saveEntry(){
-
-		String EntryInfo = "Save ME!!!!!!!!";
-
-		try {
-			BufferedWriter writer = new BufferedWriter ( new FileWriter(".\\test.txt"));
-
-			writer.write(EntryInfo);
-
-			writer.close();
-			} catch (IOException e){
-				e.printStackTrace();
-			}
-
-	}
-
 
 }
