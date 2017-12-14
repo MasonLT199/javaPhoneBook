@@ -1,7 +1,7 @@
 
 import java.io.*;
-import java.lang*;
-import java.util*;
+import java.lang.*;
+import java.util.*;
 
 public class createFile {
 
@@ -23,21 +23,13 @@ public class createFile {
 	public void openFile(){
 		try{
 			x = new Formatter("text.txt");
-		}catch(exception e){
+		}catch(Exception e){
 			System.out.println("you have an error");
 		}
 	}
 
 	public void addRecords(){
-		x.format("
-
-			%s
-			%s
-			%s
-			%d
-			%l
-
-			", firstName, middleInitial,lastName , age, phoneNum);
+		x.format("%s %s %s %d %d", firstName, middleInitial,lastName , age, phoneNum);
 	}
 
 	public void closeFile(){
