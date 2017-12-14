@@ -7,14 +7,10 @@
  *|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
 
-package com.example;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class PhoneBook {
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void main(String[] args){
 
         //standard input object 1
         Scanner sc1 = new Scanner(System.in);
@@ -26,9 +22,7 @@ public class PhoneBook {
         int option = sc1.nextInt();
 
         if(option == 1) {
-            //System.out.println("Sorry, this feature is currrently under construction.");
-            SearchFile fileSearch = new FileSearch();
-            fileSearch.parseFile("data.txt", "d");
+            System.out.println("Sorry, this feature is currrently under construction.");
         }
 
         else if(option == 2) {
@@ -61,7 +55,7 @@ public class PhoneBook {
 
                 //send the values read to NewEntry and createFile classes
                 NewEntry person = new NewEntry(firstName, middleInitial, lastName, age, phoneNumber);
-                createFile g = new createFile(firstName, middleInitial, lastName, age, phoneNumber);
+                createFile file = new createFile(firstName, middleInitial, lastName, age, phoneNumber);
 
                 //option to continue when entry is complete
                 System.out.print("\nWould you like to make another entry?");

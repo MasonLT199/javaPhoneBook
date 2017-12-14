@@ -14,6 +14,8 @@ public class NewEntry{
 		lastName = lName;
 		age = nAge;
 		phoneNum = pNum;
+
+		printAdditions();
 	}
 
 	private void printAdditions(){
