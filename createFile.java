@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 //import java.lang.Object;
@@ -28,16 +29,18 @@ public class createFile {
 		age = nAge;
 		phoneNum = pNum;
 
-		//writeUsingFileWriter();
+		writeUsingFileWriter();
 	}
 
 	private void writeUsingFileWriter() {
 
         File file = new File("./data.txt");
 
-        FileWriter fr = null;
+		// if (!file.exists()) {
+        //     file.createNewFile();
+        // }
 
-        StringBuilder data;
+        StringBuilder data = new StringBuilder();
         data.append(firstName);
         data.append(" ");
         data.append(middleInitial);
@@ -47,30 +50,33 @@ public class createFile {
         data.append(age);
         data.append(" ");
         data.append(phoneNum);
-        
+
 		data.toString();
 
         try {
 
-            fr = new FileWriter(file);
-            fr.write(data);
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(data.toString() + "\n");
+			bw.close();
 
         } catch (IOException e) {
 
             e.printStackTrace();
 
-        }finally{
+        }
+		System.out.println(data.toString());//finally{
 
             //close resources
-            try {
+            //try {
 
-                fr.close();
+                //fr.close();
 
-            } catch (IOException e) {
+            //} catch (IOException e) {
 
-                e.printStackTrace();
+            //e.printStackTrace();
 
-            }
-        }
+            //}
+        //}
     }
 }
